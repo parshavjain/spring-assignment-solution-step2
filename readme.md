@@ -2,8 +2,6 @@
 
 ### Problem Statement
 
-In this case study: Activity Stream Step 1, we will develope a monolithic application which will possibly get the data/message from the a client using a form, identify the circle for the data , persist it. 
-See the message as part of the user’s inbox. a fairly hardcoded implementation
 
 ### Expected solution
 
@@ -49,7 +47,7 @@ The folders and files you see in this repositories, is how it is expected to be 
 
      `git remote rm origin`
 
-4. Create a new repo in gitlab named `assignment-solution-step6` as private repo
+4. Create a new repo in gitlab named `assignment-solution-step2` as private repo
 
 5. Add your new repository reference as remote
 
