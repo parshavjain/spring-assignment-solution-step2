@@ -8,6 +8,7 @@ public interface MessageDAO {
 		
 		public List<Message> getMessagesFromCircle(); 
 		public boolean sendMessageToCircle(Message message);
+		public boolean removeMessageToCircle(Message message);
 		 
 		
 

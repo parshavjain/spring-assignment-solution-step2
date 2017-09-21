@@ -13,42 +13,57 @@ import org.springframework.stereotype.Repository;
 import com.stackroute.activitystream.dao.MessageDAO;
 import com.stackroute.activitystream.model.Message;
 
-@Repository("messageDAO")
-@Transactional
+/*
+ * This class is implementing the MessageDAO interface. This class has to be annotated with @Repository
+ * annotation.
+ * @Repository - is an annotation that marks the specific class as a Data Access Object, thus 
+ * 				 clarifying it's role.
+ * @Transactional - The transactional annotation itself defines the scope of a single database 
+ * 					transaction. The database transaction happens inside the scope of a persistence 
+ * 					context.  
+ * */
+
+
 public class MessageDAOImpl implements MessageDAO {
 
-	private static int pageSize = 8;
-
-	@Autowired
-	private SessionFactory sessionFactory;
+	/*
+	 * Autowiring should be implemented for the SessionFactory. 
+	 */
+	
 
 	
-	public MessageDAOImpl(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
+	
 
-	private Session getCurrentSession() {
-		return sessionFactory.getCurrentSession();
-	}
-
+	/*
+	 * retrieve all existing messages sorted by posted Date in descending order(showing latest
+	 * message first)
+	 */
+	@Override
 	public List<Message> getMessagesFromCircle() {
-		Query query = getCurrentSession().createQuery("from Message order by postedDate desc");
-		return query.list();
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 
+	/*
+	 * Save the message in the database in message table 
+	 */
+	@Override
 	public boolean sendMessageToCircle(Message message) {
-		try {
-			message.setPostedDate();
-			getCurrentSession().save(message);
-			return true;
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return false;
-		}
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	/*
+	 * Remove the message from the database in message table 
+	 */
 
+	@Override
+	public boolean removeMessageToCircle(Message message) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
+	
 
 }

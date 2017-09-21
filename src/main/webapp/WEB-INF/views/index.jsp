@@ -50,7 +50,9 @@
 
 	<form action="sendMessage">
 		<table>
-
+			<c:if test="${!empty errorMsg}">
+					${errorMsg}
+				</c:if>
 			<tr>
 				<td>Sender Name:</td>
 				<td><input type="text" name="sender" /></td>
