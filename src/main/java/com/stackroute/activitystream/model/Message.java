@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 public class Message {
 
-	public void setSenderId(String string) {
+	public void setSenderName(String string) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -32,7 +32,7 @@ public class Message {
 		
 	}
 
-	public Object getSenderId() {
+	public Object getSenderName() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -44,7 +44,7 @@ public class Message {
 	
 	/*
 	 * This class should have four fields
-	 * (messageId,senderId,postedDate,message). Out of these four fields, the
+	 * (messageId,senderName,postedDate,message). Out of these four fields, the
 	 * field messageId should be auto-generated. This class should also contain
 	 * the getters and setters for the fields. The value of postedDate should
 	 * not be accepted from the user but should be always initialized with the
