@@ -4,6 +4,7 @@
 
 
 ### Expected solution
+![alt](https://s3.ap-south-1.amazonaws.com/stackroute/oie_eqW5sRly35UA.png)
 
 ### Following are the broad tasks:
 1. Create the application-context for the application. 
