@@ -1,4 +1,5 @@
 ## Seed code - Boilerplate for step 2 - Activity Stream Assignment
+### Asignment Step Description
 
 ### Problem Statement
 In this case study: Activity Stream Step 2 we will create an application that requires us to implement two functionalities. They are as follows:
