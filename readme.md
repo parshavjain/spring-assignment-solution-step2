@@ -1,7 +1,10 @@
 ## Seed code - Boilerplate for step 2 - Activity Stream Assignment
 
 ### Problem Statement
-
+In this case study: Activity Stream Step 2 we will create an application that requires us to implement two functionalities. They are as follows:
+1. Display the list of existing messages from the database. Each message should contain senderName, message, and timestamp 
+2. The Message which is sent should contain the senderName, message, and timestamp.
+     
 
 ### Expected solution
 ![alt](https://s3.ap-south-1.amazonaws.com/stackroute/oie_eqW5sRly35UA.png)
