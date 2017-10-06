@@ -5,6 +5,8 @@ In this Case Study, we will create an Activity Stream Application which accepts 
 Here we will have a **Message** class which will be acting as the data model for message table in the database. Please note that this class is annotated with **@Entity annotation**, where Hibernate will scan all the packages for any Java objects annotated with the @Entity annotation. 
 If it finds any, then it will begin the process of looking through that particular Java object to recreate it as a table in your database. 
 
+In this case study, we are defining the beans related to hibernate from inside **ApplicationContextConfig** class only. Hence hibernate-cfg.xml file and HibernateUtil class are no more required in this step.
+
 ### Problem Statement
 In this case study: Activity Stream Step 2 we will create an application that requires us to implement two functionalities. They are as follows:
 1. Display the list of existing messages from the database. Each message should contain senderName, message, and timestamp. 
