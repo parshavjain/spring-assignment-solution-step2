@@ -1,6 +1,7 @@
 ## Seed code - Boilerplate for step 2 - Activity Stream Assignment
 ### Asignment Step Description
-In this Case Study, we will create an Activity Stream Application which accepts Sender's name and Message as input from the front end and displays the same along with the timestamp posting in a reverse chronological order (latest message first). In this case study, we will "Message" class which will be acting as the data model for message table in the database. Please note that this class is annotated with @Entity annotation, where Hibernate will scan all the packages for any Java objects annotated with the @Entity annotation. 
+In this Case Study, we will create an Activity Stream Application which accepts Sender's name and Message as input from the front end and displays the same along with the timestamp posting in a reverse chronological order (latest message first). 
+Here we will have a "Message" class which will be acting as the data model for message table in the database. Please note that this class is annotated with @Entity annotation, where Hibernate will scan all the packages for any Java objects annotated with the @Entity annotation. 
 If it finds any, then it will begin the process of looking through that particular Java object to recreate it as a table in your database. 
 
 ### Problem Statement
