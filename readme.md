@@ -97,5 +97,5 @@ The folders and files you see in this repositories, is how it is expected to be 
 
 *** Release 0.1.0 ***
 
-- Right click on the Assignment select Run As -> Java Application to run your Assignment.
+- Right click on the Assignment select Run As -> Run on Server to run your Assignment.
 - Right click on the Assignment select Run As -> JUnit Test to run your Assignment.
