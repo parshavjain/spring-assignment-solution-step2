@@ -2,7 +2,8 @@
 ### Assignment Step Description
 In this Case Study, we will create an Activity Stream Application which accepts Sender's name and Message as input from the front end and displays the same along with the timestamp posting in a reverse chronological order (latest message first). 
 
-Here we will have a **Message** class which will be acting as the data model for message table in the database. Please note that this class is annotated with **@Entity annotation** (The @Entity annotation marks the class as an entity bean, so it must have a no-argument constructor that is visible with an at least protected scope), where Hibernate will scan all the packages for any Java objects annotated with the @Entity annotation. 
+Here we will have a **Message** class which will be acting as the data model for message table in the database. Please note that this class is annotated with **@Entity annotation** (**The @Entity annotation marks the class as an entity bean, so it must have a no-argument constructor that is visible with an at least protected scope**), where Hibernate will scan all the packages for any Java objects annotated with the @Entity annotation. 
+
 If it finds any, then it will begin the process of looking through that particular Java object to recreate it as a table in your database. 
 
 In this case study, we are defining the beans related to hibernate from inside **ApplicationContextConfig** class only. Hence hibernate-cfg.xml file and HibernateUtil class are no more required in this step.
