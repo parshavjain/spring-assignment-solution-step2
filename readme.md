@@ -14,6 +14,7 @@ In this case study: Activity Stream Step 2 we will create an application that re
      
 
 ### Expected solution
+
 ![alt](https://s3.ap-south-1.amazonaws.com/stackroute/oie_eqW5sRly35UA.png)
 
 ### Following are the broad tasks:
