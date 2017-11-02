@@ -1,23 +1,9 @@
 package com.stackroute.activitystream.controller;
 
-import java.util.List;
-
-import org.hibernate.Query;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-
-import com.stackroute.activitystream.dao.MessageDAO;
-import com.stackroute.activitystream.model.Message;
-
 /*
  * Annotate the class with @Controller annotation.@Controller annotation is used to mark 
  * any POJO class as a controller so that Spring can recognize this class as a Controller
  */
-@Controller
 public class AppController {
 
 	/*

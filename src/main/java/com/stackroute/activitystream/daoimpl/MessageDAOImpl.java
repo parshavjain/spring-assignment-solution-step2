@@ -2,14 +2,6 @@ package com.stackroute.activitystream.daoimpl;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
-
 import com.stackroute.activitystream.dao.MessageDAO;
 import com.stackroute.activitystream.model.Message;
 

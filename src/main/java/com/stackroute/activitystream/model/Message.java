@@ -1,13 +1,5 @@
 package com.stackroute.activitystream.model;
 
-import java.sql.Timestamp;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 /*
  * The class "Message" will be acting as the data model for the message Table in the database. Please
  * note that this class is annotated with @Entity annotation. Hibernate will scan all package for 
