@@ -31,7 +31,7 @@ public class MessageDAOImpl implements MessageDAO {
 	 * message first)
 	 */
 	@Override
-	public List<Message> getMessagesFromCircle() {
+	public List<Message> getMessages() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -41,7 +41,7 @@ public class MessageDAOImpl implements MessageDAO {
 	 * Save the message in the database in message table 
 	 */
 	@Override
-	public boolean sendMessageToCircle(Message message) {
+	public boolean sendMessage(Message message) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -51,7 +51,7 @@ public class MessageDAOImpl implements MessageDAO {
 	 */
 
 	@Override
-	public boolean removeMessageToCircle(Message message) {
+	public boolean removeMessage(Message message) {
 		// TODO Auto-generated method stub
 		return false;
 	}

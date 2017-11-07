@@ -1,11 +1,13 @@
 package com.stackroute.activitystream.test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 import java.util.List;
 
+import javax.swing.Spring;
 import javax.transaction.Transactional;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.After;
 import org.junit.Before;
@@ -24,17 +26,13 @@ import com.stackroute.activitystream.model.Message;
 @WebAppConfiguration
 @Transactional
 @ContextConfiguration(classes= {ApplicationContextConfig.class})
-public class ActivityStreamTest {
+public class MessageDAOTest {
 	
 	@Autowired
 	private MessageDAO messageDAO;
 	
 	@Autowired
 	private Message message;
-	
-	@Autowired
-	private SessionFactory sessionFactory;
-	
 	
 	@Before
 	public void setup() {
@@ -50,21 +48,21 @@ public class ActivityStreamTest {
 	@Test
 	public void testGetListOfMessages() {
 		
-		List<Message> messages=messageDAO.getMessagesFromCircle();
+		List<Message> messages=messageDAO.getMessages();
 		assertNotNull("Retrieval of messages failed.",messages);
 	}
 	
 	@Test
-	public void testSendMessages() {
+	public void testSendMessage() {
 		
 		Message message=new Message();
 		message.setSenderName("John");
 		message.setMessage("Sample message");
 		message.setPostedDate();
 		
-		messageDAO.sendMessageToCircle(message);
+		messageDAO.sendMessage(message);
 		
-		List<Message> messages=messageDAO.getMessagesFromCircle();
+		List<Message> messages=messageDAO.getMessages();
 		
 		boolean found=false;
 		for(Message msg:messages)
@@ -76,8 +74,7 @@ public class ActivityStreamTest {
 		
 		assertEquals("Sending of messages failed",true,found);
 		
-		messageDAO.removeMessageToCircle(message);
-		//sessionFactory.getCurrentSession().delete(message);
+		messageDAO.removeMessage(message);
 			
 	}
 	

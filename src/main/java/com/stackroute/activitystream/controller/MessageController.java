@@ -4,7 +4,7 @@ package com.stackroute.activitystream.controller;
  * Annotate the class with @Controller annotation.@Controller annotation is used to mark 
  * any POJO class as a controller so that Spring can recognize this class as a Controller
  */
-public class AppController {
+public class MessageController {
 
 	/*
 	 * From the problem statement, we can understand that the application
