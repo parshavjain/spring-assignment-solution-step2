@@ -26,21 +26,21 @@ When the user enters the Sender name, Message and clicks on submit button, it ge
 
 ### Steps to be followed:
 
-Step 1: Clone the boilerplate in a specific folder in your local machine and import the same in your eclipse STS.
-Step 2: Add relevant dependencies in pom.xml file. 
-    Note: Read the comments mentioned in pom.xml file for identifying the relevant dependencies.
-Step 3: In ApplicationContextConfig.java add the required annotations, as well as add base packages to scan in @componentScan Annotation. Define the bean for DataSource, SessionFactory and Transaction Manager.
-Step 4: Specify Root config class in WebApplicationInitializer.java file.
-Step 5: In Message.java file (which is considered as Model class), annotate this class with @Entity Annotation and add @Id annotation to specify the primary key for the table.
-Step 6: Read all the methods mentioned in the MessageDAO interface.
-Step 7: Provide the implementation for all the methods of MessageDAO interface in MessageDAOImpl. These classes have to be annotated with @Repository and @Transactional.
-Step 8: Run the JUnit testcases for MessageDAOImpl.java class (MessageDAOTest.java)
-Step 9: Annotate the MessageController.java class with @Controller annotation, also define a handler method to read the existing messages from the database, 
+    Step 1: Clone the boilerplate in a specific folder in your local machine and import the same in your eclipse STS.
+    Step 2: Add relevant dependencies in pom.xml file. 
+        Note: Read the comments mentioned in pom.xml file for identifying the relevant dependencies.
+    Step 3: In ApplicationContextConfig.java add the required annotations, as well as add base packages to scan in @componentScan Annotation. Define the bean for DataSource, SessionFactory and Transaction Manager.
+    Step 4: Specify Root config class in WebApplicationInitializer.java file.
+    Step 5: In Message.java file (which is considered as Model class), annotate this class with @Entity Annotation and add @Id annotation to specify the primary key for the table.
+    Step 6: Read all the methods mentioned in the MessageDAO interface.
+    Step 7: Provide the implementation for all the methods of MessageDAO interface in MessageDAOImpl. These classes have to be annotated with @Repository and @Transactional.
+    Step 8: Run the JUnit testcases for MessageDAOImpl.java class (MessageDAOTest.java)
+    Step 9: Annotate the MessageController.java class with @Controller annotation, also define a handler method to read the existing messages from the database, 
             and to read the senderName and message from requested parameters and save the message in the message table in the database.
-Step 10: Run the MockMVCTest cases for MessageController.java (MessageControllerTest.java)
-Step 11: Design a form with 2 text boxes (one for sender name and other for Message) and a submit button. 
+    Step 10: Run the MockMVCTest cases for MessageController.java (MessageControllerTest.java)
+    Step 11: Design a form with 2 text boxes (one for sender name and other for Message) and a submit button. 
             A table which shows Senders name, Message and the Message posted date.
-Step 12: Run the application on configured web server.
+    Step 12: Run the application on configured web server.
 
 ### Project structure
 
