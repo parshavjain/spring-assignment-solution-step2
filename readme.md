@@ -11,6 +11,7 @@ In this case study, we are defining the beans related to hibernate from inside *
 In this case study: Activity Stream Step 2 we will create an application that requires us to implement two functionalities. They are as follows:
 1. Display the list of existing messages from the database. Each message should contain senderName, message, and timestamp. 
 2. The Message which is sent should contain the senderName, message, and timestamp.
+    
     Note: For detailed clarity on the class files, kindly go thru the Project Structure
 
 ### Expected solution
