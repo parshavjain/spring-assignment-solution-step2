@@ -2,10 +2,17 @@
 ### Assignment Step Description
 In this Case Study, we will create an Activity Stream Application which accepts Sender's name and Message as input from the front end and displays the same along with the timestamp posting in a reverse chronological order (latest message first). 
 
-Here we will have a **Message** class which will be acting as the data model for message table in the database. Please note that this class is annotated with **@Entity annotation** (**The @Entity annotation marks the class as an entity bean, so it must have a no-argument constructor that is visible with an at least protected scope**), where Hibernate will scan all the packages for any Java objects annotated with the @Entity annotation. 
-If it finds any, then it will begin the process of looking through that particular Java object to recreate it as a table in your database. 
+Even though functionality-wise and the output of step - 1 and step 2 are same, in step 1:
+ 1. We created a monolithic application but in this step 2, we will use proper annotations like @Component, @Repository,  @Autowired etc.,  
+ 2. In this step 2, we should not use "new"  keyword to create an instance.  
+ 3. Hibernate configuration was in the xml file in step-1.  In Step-2 it is in java.
+ 4. Hibernate session factory should be created automatically instead of getting it from HibernateUtil.
 
 In this case study, we are defining the beans related to hibernate from inside **ApplicationContextConfig** class only. Hence hibernate-cfg.xml file and HibernateUtil class are no more required in this step.
+
+Here we will have a **Message** class which will be acting as the data model for message table in the database. Please note that this class is annotated with **@Entity annotation** (**The @Entity annotation marks the class as an entity bean, so it must have a no-argument constructor that is visible with an at least protected scope**), 
+where Hibernate will scan all the packages for any Java objects annotated with the @Entity annotation. 
+If it finds any, then it will begin the process of looking through that particular Java object to recreate it as a table in your database. 
 
 ### Problem Statement
 In this case study: Activity Stream Step 2 we will create an application that requires us to implement two functionalities. They are as follows:
