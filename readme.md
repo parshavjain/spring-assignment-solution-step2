@@ -2,8 +2,8 @@
 ### Assignment Step Description
 In this Case Study, we will create an Activity Stream Application which accepts Sender's name and Message as input from the front end and displays the same along with the timestamp posting in a reverse chronological order (latest message first). 
 
-Even though functionality-wise and the output of step-1 and step-2 are same, in step-1:
- 1. We created a monolithic application but in this step-2, we will use proper annotations like @Component, @Repository,  @Autowired etc.,  
+Even though functionality-wise and the output of step-1 and step-2 are same, 
+ 1. In step-1 we created a monolithic application but in this step-2, we will use proper annotations like @Component, @Repository,  @Autowired etc.,  
  2. In this step-2, we should not use "new"  keyword to create an instance.  
  3. Hibernate configuration was in the xml file in step-1. In Step-2 it is in java class file.
  4. Hibernate session factory should be created automatically instead of getting it from HibernateUtil.
