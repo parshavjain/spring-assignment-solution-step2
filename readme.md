@@ -5,7 +5,7 @@ In this Case Study, we will create an Activity Stream Application which accepts 
 Even though functionality-wise and the output of step-1 and step-2 are same, 
  1. In step-1 we created a monolithic application but in this step-2, we will use proper annotations like @Component, @Repository,  @Autowired etc.,  
  2. In this step-2, we should not use "new"  keyword to create an instance.  
- 3. Hibernate configuration was in the xml file in step-1. In Step-2 it is in java class file.
+ 3. In step-1 Hibernate configuration was in the xml file but in Step-2 it is in java class file.
  4. Hibernate session factory should be created automatically instead of getting it from HibernateUtil.
 
 In this case study, we are defining the beans related to hibernate from inside **ApplicationContextConfig** class only. Hence hibernate-cfg.xml file and HibernateUtil class are no more required in this step.
