@@ -47,7 +47,9 @@ public class MessageDAOImpl implements MessageDAO {
 	}
 	
 	/*
-	 * Remove the message from the database in message table 
+	 * Remove the message from the database in message table. Please note that this
+	 * method is not required for implementing the functionality but is required for passing
+	 * the test cases
 	 */
 
 	@Override
