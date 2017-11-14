@@ -2,26 +2,53 @@
 ### Assignment Step Description
 In this Case Study, we will create an Activity Stream Application which accepts Sender's name and Message as input from the front end and displays the same along with the timestamp posting in a reverse chronological order (latest message first). 
 
-Here we will have a **Message** class which will be acting as the data model for message table in the database. Please note that this class is annotated with **@Entity annotation** (**The @Entity annotation marks the class as an entity bean, so it must have a no-argument constructor that is visible with an at least protected scope**), where Hibernate will scan all the packages for any Java objects annotated with the @Entity annotation. 
-If it finds any, then it will begin the process of looking through that particular Java object to recreate it as a table in your database. 
+Even though functionality-wise and the output of step-1 and step-2 are same, 
+ 1. In step-1 we created a monolithic application but in this step-2, we will use proper annotations like @Component, @Repository,  @Autowired etc.,  
+ 2. In this step-2, we should not use "new"  keyword to create an instance.  
+ 3. In step-1 Hibernate configuration was in the xml file but in Step-2 it is in java class file.
+ 4. Hibernate session factory should be created automatically instead of getting it from HibernateUtil.
 
 In this case study, we are defining the beans related to hibernate from inside **ApplicationContextConfig** class only. Hence hibernate-cfg.xml file and HibernateUtil class are no more required in this step.
+
+Here we will have a **Message** class which will be acting as the data model for message table in the database. Please note that this class is annotated with **@Entity annotation** (**The @Entity annotation marks the class as an entity bean, so it must have a no-argument constructor that is visible with an at least protected scope**), 
+where Hibernate will scan all the packages for any Java objects annotated with the @Entity annotation. 
+If it finds any, then it will begin the process of looking through that particular Java object to recreate it as a table in your database. 
 
 ### Problem Statement
 In this case study: Activity Stream Step 2 we will create an application that requires us to implement two functionalities. They are as follows:
 1. Display the list of existing messages from the database. Each message should contain senderName, message, and timestamp. 
 2. The Message which is sent should contain the senderName, message, and timestamp.
-     
+    
+    Note: For detailed clarity on the class files, kindly go thru the Project Structure
 
 ### Expected solution
 
-![alt](https://s3.ap-south-1.amazonaws.com/stackroute/oie_eqW5sRly35UA.png?response-content-disposition=inline&X-Amz-Security-Token=AgoGb3JpZ2luEJL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCmFwLXNvdXRoLTEigAKGjZseNxIh5O0JI7o8xkNZQcHrnOgSPN3BPn8%2FlcDjp5Az2mhEi2k3i1CFpRYfwvGPUCTdKv5eJCibhD1FAfC1y5DA5JM07d%2Bn%2FHohz%2F%2Bn1%2BTpofBfETTCwYwcnku0a42bUaq7WEt83TcQwiTv3yvJM1Ls9GL4SOywx5Q10YCgixTCmibCldVZrwEfW9dYXaV1bMniZSHXjwMHbl%2BjiqhGpoPMGVYYqZ9%2Fp0Eu6xlvY69xGfQz7zfhnsbB7LyS0No4Cewgzo%2F%2Fd5toZvYB2L9bVM33U7OrvuCdBSSkoikkd%2Fi77vRw%2FvwxO6wNp8GkcAZ6jE66pyQF8xXa4bwYKZt4KvsDCLb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMDc5NTU0MTAzMjIxIgzfN%2Fxjan3dyM9zgckqzwNgA4wMVRH56MvHmT8zF8tdHqnzQstJZkvPlQDWo%2FMS4bwafx1YOI02P5BqAIyPF2J3%2BqzD15DIpnlpT7X2qaXAEiCJGTFAPW3YbFVmIyW18hEvFGEj%2F0uKhofchMz7r8XTry88bwSEvggHrBB8F6yac6XJvQV2Wh94YEiqlA%2F8AYGZwpmWQNbpRGID8B0iYN4fTX1t51QsyRdMXtN7sP4bEzlcfB7HwZ%2B%2Ff6Wrsc5lWP13wZWcR4eKRMezF2kRUJEPDnBc0gnVHIItDtbTqGiVwgtPe4WKmlO9fkLuyYFZdjr58xb855GpoFD7%2F0ETt%2BdEtFiw5c7p58qqnKYyFrRKSAQ0CDMj1rAjZhtHpbXrnzcylJRTrzrYznd0aoBNKCnB%2FshB3GmENBdC%2BJn2BW3FMvsdzd7YxITROFhTQbEQUF1vfQ5gEH7YQBU9MubgRyAY%2Fcj9PqbvT%2Bsgqh%2BnirQLMHCwZUGEBkwMfxgiaTXvrtiZr8TcvgtivqWDmx3STwm01puC2DFF%2BlfBfIsHebgNB2eOhJoGrTcq4F2YWDRtG9By9t2stdkqGKCoLSgAbpz%2BsUawsdUsGMFgTBfqzgABL%2F6oZEJZc8Z75sFYQD5cMNvf2s8F&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20171030T055114Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAIFU5LZM24L23AVAA%2F20171030%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=fbd4e6d35bbeafd41d7978a47c6a15d7b1eb48f78b419d89e4bf957d5a9106f3)
+A form containing two text fields one for Sender Name, other for Message and a submit button, below to this will be a tabular column with the fields Sender Name, Message and Timestamp (This will be published in reverse chronological order). 
+When the user enters the Sender name, Message and clicks on submit button, it gets stored in the database and later render in tabular column.
 
 ### Following are the broad tasks:
 1. Create the application-context for the application. 
 2. Extend AbstractAnnotationConfigDispatcherServletInitializer class WebApplicationInitializer.
 3. Display the list of existing messages from the database. Each message should contain senderName, message, and timestamp. send a message which should contain the senderName, message, and timestamp.
 4. Implement the MessageDAO interface and annotate with @Repository annotation in MessageDAOImpl.
+
+### Steps to be followed:
+
+    Step 1: Clone the boilerplate in a specific folder in your local machine and import the same in your eclipse STS.
+    Step 2: Add relevant dependencies in pom.xml file. 
+        Note: Read the comments mentioned in pom.xml file for identifying the relevant dependencies.
+    Step 3: In ApplicationContextConfig.java add the required annotations, as well as add base packages to scan in @componentScan Annotation. Define the bean for DataSource, SessionFactory and Transaction Manager.
+    Step 4: Specify Root config class in WebApplicationInitializer.java file.
+    Step 5: In Message.java file (which is considered as Model class), annotate this class with @Entity Annotation and add @Id annotation to specify the primary key for the table.
+    Step 6: Read all the methods mentioned in the MessageDAO interface.
+    Step 7: Provide the implementation for all the methods of MessageDAO interface in MessageDAOImpl. These classes have to be annotated with @Repository and @Transactional.
+    Step 8: Run the JUnit testcases for MessageDAOImpl.java class (MessageDAOTest.java)
+    Step 9: Annotate the MessageController.java class with @Controller annotation, also define a handler method to read the existing messages from the database, 
+            and to read the senderName and message from requested parameters and save the message in the message table in the database.
+    Step 10: Run the MockMVCTest cases for MessageController.java (MessageControllerTest.java)
+    Step 11: Design a form with 2 text boxes (one for sender name and other for Message) and a submit button. 
+            A table which shows Senders name, Message and the Message posted date.
+    Step 12: Run the application on configured web server.
 
 ### Project structure
 
@@ -34,7 +61,7 @@ The folders and files you see in this repositories, is how it is expected to be 
 	|   	        └── ApplicationContextConfig.java           // This class will contain the application-context for the application.
 	|	            └── WebApplicationInitializer.java          // This class WebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer class.
 	|	    └── com.stackroute.activitystream.controller
-	|		        └── AppController.java 	                    // This class is used to control all the transactions with the database.	               
+	|		        └── MessageController.java 	                    // This class is used to control all the transactions with the database.	               
 	|	    └── com.stackroute.activitystream.dao
 	|		        └── MessageDAO.java                         // An interface that provides access to an underlying database (Message) or any other persistence storage.
 	|	    └── com.stackroute.activitystream.daoimpl
@@ -44,8 +71,9 @@ The folders and files you see in this repositories, is how it is expected to be 
 	|	    └── webapp/WEB-INF/views
     |               └── index.jsp                               // A JSP page with a form in it, which will have textboxes for Sender Name and Message content along with a Send Submit button. 
     |
-    ├──src/test/java/com/stackroute/activitystream/test
-    |           └── ActivityStreamTest.java     // All your test cases are written using JUnit, these test cases can be run by selecting Run As -> JUnit Test
+    ├──src/test/java/com/stackroute/activitystream/test      // All your test cases are written using JUnit, these test cases can be run by selecting Run As -> JUnit Test
+    |           └── MessageControllerTest.java      
+    |           └── MessageDAOTest.java             
     ├── .settings
 	├── .classpath			                    // This file is generated automatically while creating the project in eclipse
 	├── .hobbes   			                    // Hobbes specific config options, such as type of evaluation schema, type of tech stack etc., Have saved a default values for convenience
