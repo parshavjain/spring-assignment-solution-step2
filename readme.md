@@ -26,15 +26,15 @@ In this case study: Activity Stream Step 2 we will create an application that re
         Note: Read the comments mentioned in pom.xml file for identifying the relevant dependencies.
     Step 3: Create Environment Variable thru script file (.sh for Linux & .bat for Windows) (refer to **How to create Environment variables?** section below)
     Step 4:Implement ApplicationContextConfig.java 
-    Step 4: Specify Root config class in WebApplicationInitializer.java file.
-    Step 5: Define the Message.java (Model class)
-    Step 6: See the methods in MessageDAO interface.
-    Step 7: Implement the MessageDAOImpl.
-    Step 8: Run the JUnit testcases for MessageDAOImpl.java (MessageDAOImplTest.java)
-    Step 9: Implement MessageController.java 
-    Step 10: Run the MockMVCTest cases for MessageController.java (MessageControllerTest.java)
-    Step 11: Design a form in index.jsp file
-    Step 12: Run the application on configured web server.
+    Step 5: Specify Root config class in WebApplicationInitializer.java file.
+    Step 6: Define the Message.java (Model class)
+    Step 7: See the methods in MessageDAO interface.
+    Step 8: Implement the MessageDAOImpl.
+    Step 9: Run the JUnit testcases for MessageDAOImpl.java (MessageDAOImplTest.java)
+    Step 10: Implement MessageController.java 
+    Step 11: Run the MockMVCTest cases for MessageController.java (MessageControllerTest.java)
+    Step 12: Design a form in index.jsp file
+    Step 13: Run the application on configured web server.
 
 ### How to create Environment variables?
 
