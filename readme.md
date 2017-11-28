@@ -16,39 +16,53 @@ If it finds any, then it will begin the process of looking through that particul
 
 ### Problem Statement
 In this case study: Activity Stream Step 2 we will create an application that requires us to implement two functionalities. They are as follows:
-1. Display the list of existing messages from the database. Each message should contain senderName, message, and timestamp. 
-2. The Message which is sent should contain the senderName, message, and timestamp.
-    
-    Note: For detailed clarity on the class files, kindly go thru the Project Structure
-
-### Expected solution
-
-A form containing two text fields one for Sender Name, other for Message and a submit button, below to this will be a tabular column with the fields Sender Name, Message and Timestamp (This will be published in reverse chronological order). 
-When the user enters the Sender name, Message and clicks on submit button, it gets stored in the database and later render in tabular column.
-
-### Following are the broad tasks:
-1. Create the application-context for the application. 
-2. Extend AbstractAnnotationConfigDispatcherServletInitializer class WebApplicationInitializer.
-3. Display the list of existing messages from the database. Each message should contain senderName, message, and timestamp. send a message which should contain the senderName, message, and timestamp.
-4. Implement the MessageDAO interface and annotate with @Repository annotation in MessageDAOImpl.
+1. Get all messages from Database and display in HTML form.
+2. Send and receive the message.
 
 ### Steps to be followed:
 
     Step 1: Clone the boilerplate in a specific folder in your local machine and import the same in your eclipse STS.
     Step 2: Add relevant dependencies in pom.xml file. 
         Note: Read the comments mentioned in pom.xml file for identifying the relevant dependencies.
-    Step 3: In ApplicationContextConfig.java add the required annotations, as well as add base packages to scan in @componentScan Annotation. Define the bean for DataSource, SessionFactory and Transaction Manager.
+    Step 3: Create Environment Variable thru script file (.sh for Linux & .bat for Windows) (refer to **How to create Environment variables?** section below)
+    Step 4:Implement ApplicationContextConfig.java 
     Step 4: Specify Root config class in WebApplicationInitializer.java file.
-    Step 5: In Message.java file (which is considered as Model class), annotate this class with @Entity Annotation and add @Id annotation to specify the primary key for the table.
-    Step 6: Read all the methods mentioned in the MessageDAO interface.
-    Step 7: Provide the implementation for all the methods of MessageDAO interface in MessageDAOImpl. These classes have to be annotated with @Repository and @Transactional.
-    Step 8: Run the JUnit testcases for MessageDAOImpl.java class (MessageDAOTest.java)
-    Step 9: Annotate the MessageController.java class with @Controller annotation, also define a handler method to read the existing messages from the database, 
-            and to read the senderName and message from requested parameters and save the message in the message table in the database.
+    Step 5: Define the Message.java (Model class)
+    Step 6: See the methods in MessageDAO interface.
+    Step 7: Implement the MessageDAOImpl.
+    Step 8: Run the JUnit testcases for MessageDAOImpl.java (MessageDAOImplTest.java)
+    Step 9: Implement MessageController.java 
     Step 10: Run the MockMVCTest cases for MessageController.java (MessageControllerTest.java)
-    Step 11: Design a form with 2 text boxes (one for sender name and other for Message) and a submit button. 
-            A table which shows Senders name, Message and the Message posted date.
+    Step 11: Design a form in index.jsp file
     Step 12: Run the application on configured web server.
+
+### How to create Environment variables?
+
+System variables can be created for Windows and Unix/Linux in the following ways
+    
+1. Windows environment 
+
+        a) Create env-variables.bat file in the project root folder 
+        (actually you can give any meaning full name anywhere, but for hobbes you need to follow this specific folder and name 
+        b) Give the following 
+                  setx -m MYSQL_DATABASE "activitystream_step2" 
+                  setx -m MYSQL_USER "root" 
+                  setx -m MYSQL_PASSWORD "root" 
+                  setx -m MYSQL_HOST "localhost" 
+        c) Navigate the this specific file in windows and run it as administrator
+      
+2. Unix/Lunix environment (And for Hobbes submission) 
+
+        a) Create env-variables.sh (instead of .bat file)
+        b) Give the following 
+                  export MYSQL_DATABASE="activitystream_step2" 
+                  export MYSQL_USER="root" 
+                  export MYSQL_PASSWORD="root" 
+                  export MYSQL_HOST="localhost" 
+        c) Navigate to this specific file through command prompt and run
+      
+Note: Exit eclipse and restart (if the eclipse is open) if you not exit and restart, the newly created environment variables will not be available and 
+hence you will get exception.
 
 ### Project structure
 
