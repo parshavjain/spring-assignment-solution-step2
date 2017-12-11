@@ -2,6 +2,12 @@ package com.stackroute.activitystream.daoimpl;
 
 import java.util.List;
 
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.stackroute.activitystream.dao.MessageDAO;
 import com.stackroute.activitystream.model.Message;
 
@@ -15,25 +21,29 @@ import com.stackroute.activitystream.model.Message;
  * 					context.  
  * */
 
-
+@Repository
+@Transactional
 public class MessageDAOImpl implements MessageDAO {
 
 	/*
 	 * Autowiring should be implemented for the SessionFactory. 
 	 */
-	
+	 @Autowired
+	 private SessionFactory sessionFactory;
 
-	
+	public MessageDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
 	
 
 	/*
-	 * retrieve all existing messages sorted by posted Date in descending order(showing latest
-	 * message first)
+	 * retrieve all existing messages sorted by posted Date in descending
+	 * order(showing latest message first)
 	 */
 	@Override
 	public List<Message> getMessages() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Message> list = sessionFactory.getCurrentSession().createQuery("from Message order by senderName").list();
+		return list;
 	}
 
 
@@ -42,7 +52,11 @@ public class MessageDAOImpl implements MessageDAO {
 	 */
 	@Override
 	public boolean sendMessage(Message message) {
-		// TODO Auto-generated method stub
+		if (null != message && null != sessionFactory && null != message.getSenderName() && null != message.getMessage()
+				&& !message.getSenderName().isEmpty() && !message.getMessage().isEmpty()) {
+			sessionFactory.getCurrentSession().saveOrUpdate(message);
+			return true;
+		}
 		return false;
 	}
 	
@@ -54,8 +68,8 @@ public class MessageDAOImpl implements MessageDAO {
 
 	@Override
 	public boolean removeMessage(Message message) {
-		// TODO Auto-generated method stub
-		return false;
+		sessionFactory.getCurrentSession().delete(message);
+		return true;
 	}
 
 	
